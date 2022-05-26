@@ -3,7 +3,8 @@ from requests import post
 from .models import Post
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404, redirect
-from .forms import PostForm
+from .forms import PostForm, LoginForm
+from django.contrib import messages
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -39,3 +40,24 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+
+def register(request):
+
+    context = { }
+
+    if request.method == "POST":
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username  = form.cleaned_data.get("username")
+            messages.success(request, f"Your account has benne created! You are now able to log in")
+            form.save()
+            return redirect('login')
+            
+    else: 
+        form = LoginForm()
+      
+    context = {
+        'form': form,
+    }
+    return render(request, 'blog/register.html', context)

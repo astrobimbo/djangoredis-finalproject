@@ -31,7 +31,7 @@ class Post(models.Model):
          jsonObj = {}
          jsonObj["author"] = str(self.author)
          jsonObj["title"] = self.title
-         jsonObj["content"] = self.content
+         jsonObj["text"] = self.text
          jsonObj["created_date"] = str(self.created_date)
          jsonObj["published_date"] = str(self.published_date)
          return sendTransactionAndGetTxId(json.dumps(jsonObj))
