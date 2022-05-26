@@ -50,7 +50,7 @@ def register(request):
         form = LoginForm(request.POST)
         if form.is_valid():
             username  = form.cleaned_data.get("username")
-            messages.success(request, f"Your account has benne created! You are now able to log in")
+            messages.success(request, f"Your account has been created! You are now able to log in")
             form.save()
             return redirect('login')
             
