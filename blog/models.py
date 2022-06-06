@@ -22,10 +22,10 @@ class Post(models.Model):
          return self.title
 
      def save(self):
-         self.transaction_id = self.WriteOnChain()
+         self.transaction_id = self.writeOnChain()
          super(Post, self).save()
 
-     def WriteOnChain(self):
+     def writeOnChain(self):
          if self == None:
            return None
          jsonObj = {}
