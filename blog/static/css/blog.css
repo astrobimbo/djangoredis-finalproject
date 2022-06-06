@@ -1,5 +1,5 @@
 h1 a, h2 a {
-    color: #00c2c2;
+    color: #9ed4fa;
     font-family: 'Koulen', cursive;
 }
 
@@ -8,7 +8,7 @@ body {
 }
 
 .page-header {
-    background-color: #00c2c2;
+    background-color: #9ed4fa;
     margin-top: 0;
     margin-bottom: 40px;
     padding: 20px 20px 20px 40px;
@@ -68,12 +68,12 @@ h4 {
 
 .btn-default,
 .btn-default:visited {
-    color: #00c2c2;
+    color: #9ed4fa;
     background: none;
-    border-color: #00c2c2;
+    border-color: #9ed4fa;
 }
 
 .btn-default:hover {
     color: #FFFFFF;
-    background-color: #00c2c2;
+    background-color: #9ed4fa;
 }
