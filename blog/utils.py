@@ -3,8 +3,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from web3 import Web3
 
-env_path = Path('/Users/jonat/OneDrive/Desktop/djangoRedis-finalproject/.env', '.env')
-load_dotenv(dotenv_path=env_path)
+env_path =os.getenv('ENVPATH')
 
 ADDRESS = os.getenv('ADDRESS')
 KEY = os.getenv('KEY')
